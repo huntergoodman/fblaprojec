@@ -12,6 +12,7 @@ function SaveXML(UserData) {
         file.Write('Pswd="' + UserData[countr][0] + '" ');
         file.Write('PersonID="' + UserData[countr][1] + '" ');
         file.Write('Name="' + UserData[countr][2] + '" ');
+        file.writer('EMail="' + UserData[countr][3] + '" ');
         file.WriteLine('></Person>\n');
     } // end for countr
 
@@ -43,7 +44,8 @@ function initialize_array() {
         var tmpUsrs = new Array(xmlObj.childNodes(usrCount).getAttribute("Usrname"),
             xmlObj.childNodes(usrCount).getAttribute("Pswd"),
             xmlObj.childNodes(usrCount).getAttribute("PersonID"),
-            xmlObj.childNodes(usrCount).getAttribute("Name"));
+            xmlObj.childNodes(usrCount).getAttribute("Name"),
+            xmlObj.childNodes(usrCount).getAttribute("EMail));
         person.push(tmpUsrs);
         usrCount++;
     } //end while
